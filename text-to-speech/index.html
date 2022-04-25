@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-To-Speech</title>
+</head>
+<style>
+    body{
+        background-color: rgb(44,44,44);
+        color:whitesmoke;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container{
+        margin-top: 13rem;
+    }
+    .container .paragraph{
+        font-size: 2rem;
+        letter-spacing: .1rem;
+    }
+    #btn{
+        border: none;
+        background-color: transparent;
+        border: 2px solid whitesmoke;
+        padding: .6rem .9rem;
+        margin-top: 2rem;
+        font-size: 1.3rem;
+        border-radius: 1rem;
+        color: whitesmoke;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="paragraph">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ex.
+        </div>
+        <button id="btn">click me to speech</button>
+    </div>
+</body>
+<script>
+    const text = document.querySelector(".paragraph");
+    const btn = document.getElementById("btn")
+    const paragraph = new SpeechSynthesisUtterance();
+    paragraph.text = text.innerHTML;
+    btn.addEventListener('click',()=>{
+        window.speechSynthesis.speak(paragraph);
+    });
+</script>
+</html>
