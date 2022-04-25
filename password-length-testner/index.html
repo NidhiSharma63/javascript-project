@@ -45,8 +45,10 @@
     pswrd.addEventListener("change", () => {
         if (pswrd.value.length <= minLength / 2) {
             msg.innerHTML = `to short`
+            msg.style.color = 'red'
         } else if ((minLength / 2) < (pswrd.value.length) < minLength) {
             msg.innerHTML = `short`;
+            msg.style.color = 'yellow'
         }else{
             msg.innerHTML=''
         }
