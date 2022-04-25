@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>password length</title>
+</head>
+<style>
+    body {
+        background-color: rgb(22, 70, 70);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: white;
+    }
+
+    input {
+        background-color: transparent;
+        border: 2px solid whitesmoke;
+        height: 3rem;
+        width: 20rem;
+        border-radius: .6rem;
+        outline: none;
+        font-size: 2rem;
+        color: white;
+    }
+    div{
+        font-size: 2rem;
+    }
+</style>
+
+<body>
+
+    <h1>password</h1>
+    <input type="password" minlength="8" id="pswrd">
+    <div class="msg"></div>
+</body>
+<script>
+    const pswrd = document.getElementById("pswrd");
+    const minLength = pswrd.getAttribute('minlength');
+    const msg = document.querySelector(".msg")
+    pswrd.addEventListener("change", () => {
+        if (pswrd.value.length <= minLength / 2) {
+            msg.innerHTML = `to short`
+        } else if ((minLength / 2) < (pswrd.value.length) < minLength) {
+            msg.innerHTML = `short`;
+        }else{
+            msg.innerHTML=''
+        }
+        setTimeout(() => {
+            msg.innerHTML=''
+        }, 2000);
+    })
+</script>
+
+</html>
