@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>genrate password</title>
+</head>
+<style>
+    body {
+        background-color: rgb(22, 70, 70);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        color: white;
+    }
+
+    input {
+        background-color: transparent;
+        border: 2px solid whitesmoke;
+        height: 3rem;
+        width: 20rem;
+        border-radius: .6rem;
+        outline: none;
+        font-size: 2rem;
+        color: white;
+    }
+
+    div {
+        font-size: 2rem;
+    }
+</style>
+
+<body>
+    <h1>password</h1>
+    <input type="password" minlength="12" id="pswrd">
+    <div class="msg"></div>
+</body>
+<script>
+    const word = ['a', 'c', 'q', 'A', 'u', 'W', 'Q', 'H', 2, 8, 3, 8, 'p', 'm', 'd'];
+    const pswrd = document.getElementById("pswrd");
+    const minlength = pswrd.getAttribute("minlength")
+    pswrd.addEventListener("click", () => {
+        let w = ''
+        for(let i=0;i<minlength;i++){
+            let randomWord = Math.floor(Math.random() * word.length);
+            w+=word[randomWord]
+        }
+    })
+</script>
+
+</html>
