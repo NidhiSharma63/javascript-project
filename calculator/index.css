@@ -41,7 +41,9 @@ body {
     margin-bottom: 2rem;
 }
 
-.btn {
+.btn,
+#on-btn,
+#clear {
     width: 3rem;
     padding: .3rem;
     text-align: center;
