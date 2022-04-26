@@ -31,10 +31,10 @@ body {
 
 .result {
     margin: 0.7rem;
-    border: 1px solid;
+    border: 1px solid  white;
+    color:white;
     padding: 0.7rem;
     font-size: 2rem;
-    color: rgb(21, 78, 233);
     font-weight: 700;
     border-radius: 0.2rem;
     height: 2rem;
@@ -43,7 +43,8 @@ body {
 
 .btn,
 #on-btn,
-#clear {
+#clear,
+#equal {
     width: 3rem;
     padding: .3rem;
     text-align: center;
