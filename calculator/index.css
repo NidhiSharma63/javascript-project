@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(56, 53, 53);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    /* border: 2px solid white; */
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: -1px 1px 12px 2px rgb(24, 22, 22)
+}
+
+.btns {
+    display: grid;
+    grid-template-areas:
+        'seven eight nine module on-btn'
+        'four five six add divide'
+        'one two three mult equal'
+        'zero double-zero point sub clear'
+    ;
+}
+
+.result {
+    margin: 0.7rem;
+    border: 1px solid;
+    padding: 0.7rem;
+    font-size: 2rem;
+    color: rgb(21, 78, 233);
+    font-weight: 700;
+    border-radius: 0.2rem;
+    height: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    width: 3rem;
+    padding: .3rem;
+    text-align: center;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: .6rem;
+    cursor: pointer;
+    border-radius: 0.2rem;
+    background-color: rgb(16, 94, 104);
+}
+
+#one {
+    grid-area: one;
+}
+
+#two {
+    grid-area: two;
+}
+
+#three {
+    grid-area: three;
+}
+
+#four {
+    grid-area: four;
+}
+
+#five {
+    grid-area: five;
+}
+
+#six {
+    grid-area: six;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#equal {
+    grid-area: equal;
+}
+
+#zero {
+    grid-area: zero;
+}
+
+#double-zero {
+    grid-area: double-zero;
+}
+
+#point {
+    grid-area: point;
+}
+
+#mult {
+    grid-area: mult;
+    background-color: rgb(116, 131, 146);
+}
+
+#module {
+    grid-area: module;
+    background-color: rgb(214, 55, 82);
+}
+
+#add {
+    grid-area: add;
+    background-color: rgb(13, 122, 13);
+}
+
+#divide {
+    grid-area: divide;
+    background-color: rgb(199, 171, 14);
+}
+
+#sub {
+    grid-area: sub;
+    background-color: rgb(199, 113, 14);
+}
+
+#equal {
+    grid-area: equal;
+    background-color: crimson;
+}
+
+#on-btn {
+    grid-area: on-btn;
+    background-color: rgb(109, 7, 7);
+
+}
+
+#clear {
+    grid-area: clear;
+    background-color: rgb(3, 9, 97);
+    border: none;
+    padding: .3rem;
+}
