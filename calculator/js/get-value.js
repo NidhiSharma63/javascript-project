@@ -20,11 +20,19 @@ const add = (arr) => {
     result.innerHTML = sum;
 }
 const sub = (arr) => {
-    let sub = 0;
+    let subtarct = 0;
     for (let i = 0; i < arr.length-1; i++) {
-        sub += (parseInt(arr[i])-parseInt(arr[i+1]))
+        i+=1;
+        if(i==1){
+            // to get acces of first two element
+            subtarct += arr[i-1] - arr[i];
+        }else{
+            // minus all value
+            subtarct-=arr[i];
+        }
+        i-=1
     }
-    result.innerHTML = sub;
+    result.innerHTML = subtarct
 }
 const mult = (arr) => {
     let mult = 1;
@@ -34,12 +42,20 @@ const mult = (arr) => {
     result.innerHTML = mult;
 }
 const divide = (arr) => {
-    let divide=0;
+    let division = 0;
     for (let i = 0; i < arr.length-1; i++) {
-        divide = (parseInt(arr[i])/parseInt(arr[i+1]));
+        i+=1;
+        if(i==1){
+            // to get acces of first two element
+            division += arr[i-1]/arr[i];
+        }else{
+            // divide all value
+            division/=arr[i];
+        }
+        i-=1
     }
-    result.innerHTML = divide;
-}
+    result.innerHTML = division;
+};
 export const Action = (equal) => {
     let splitValue;
     for (let i = 0; i < totalResultInnerHtml.length; i++) {

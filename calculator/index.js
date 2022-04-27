@@ -24,17 +24,24 @@ clear.addEventListener("click", () => {
         result.innerHTML = ''
     }
 });
-equal.addEventListener('click',()=>{
-    if(on){
+equal.addEventListener('click', () => {
+    if (on) {
         Action()
     }
 })
 
-const add =(arr)=>{
-    let sum=0;
-    for(let i=0;i<arr.length;i++){
-        sum+=parseInt(arr[i])
+const divide = (arr) => {
+    let divide = 0;
+    for (let i = 0; i < arr.length-1; i++) {
+        i+=1;
+        if(i==1){
+            // to get acces of first two element
+            divide += arr[i-1]/arr[i];
+        }else{
+            // minus all value
+            divide/=arr[i];
+        }
+        i-=1
     }
-    console.log(sum)
-}
-// add([21,3,4])
+};
+divide([8,2,4])
