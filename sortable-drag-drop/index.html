@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: rgb(116, 6, 43);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .container {
+        /* border: 1px solid white; */
+        width: 20rem;
+        height: 18rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+
+    .item {
+        /* cursor: pointer; */
+        position: relative;
+        padding: 1rem 2rem;
+        background-color: white;
+        color: rgb(129, 6, 47);
+        width: 80%;
+        font-weight: bolder;
+        border-radius: 1rem;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="item" draggable="true">item1</div>
+        <div class="item" draggable="true">item2</div>
+        <div class="item" draggable="true">item3</div>
+        <div class="item" draggable="true">item4</div>
+        <div class="item" draggable="true">item5</div>
+    </div>
+</body>
+
+<script>
+    const container = document.querySelector(".container");
+    const items = document.querySelectorAll(".item");
+    let dragged;
+    items.forEach((item) => {
+        item.addEventListener("drag", (e) => {
+            e.preventDefault();
+            dragged=e.target;
+            // console.log(dragged)
+            e.target.style.opacity = "0.5";
+            e.target.style.background = "white"
+        }, false);
+        item.addEventListener("dragenter", (e) => {
+            e.preventDefault()
+            e.target.classList.add("active")
+            // e.target.style.background = "red";
+        }, false);
+        item.addEventListener("dragleave", (e) => {
+            e.preventDefault();
+            e.target.classList.remove("active")
+            e.target.style.background = "white";
+        }, false);
+        item.addEventListener("dragend", (e) => {
+            e.preventDefault();
+            e.target.style.opacity = "1";
+            container.appendChild(e.target);
+        }, false);
+        
+        
+    });
+
+    container.addEventListener("drop", (e) => {
+            e.preventDefault();
+            console.log('drop')
+            // console.log(e.target+' dreoped')
+        }, false);
+
+</script>
+
+</html>
