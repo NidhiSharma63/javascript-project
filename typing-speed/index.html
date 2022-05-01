@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speed-typing-game</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-color: rgb(6, 153, 104);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .wrapper {
+        width: 624px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .paragraph-container {
+        background: white;
+        color: rgb(6, 153, 104);
+        margin-bottom: 2rem;
+        padding: 1rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        line-height: 33px;
+        border-radius: 1rem;
+    }
+
+    .btn-container {
+        display: flex;
+        width: 22rem;
+        justify-content: space-around;
+    }
+
+    #start-btn,
+    #restart-btn,
+    .timer,
+    #error {
+        border: 2px solid white;
+        background: transparent;
+        color: white;
+        font-size: 1.4rem;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        margin-bottom: 2rem;
+        cursor: pointer;
+    }
+    #restart-btn{
+        display: none;
+    }
+    textarea {
+        border-radius: 0.5rem;
+        border: none;
+        color: rgb(6, 153, 104);
+        outline: none;
+        padding: 1rem;
+        resize: none;
+    }
+    .correct{
+        color: rgb(7, 80, 7);
+    }
+    .incorrect,
+    .error-count{
+        color: rgb(141, 12, 12);
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="paragraph-container">
+            <p class="paragraph-text">
+              
+            </p>
+        </div>
+        <div class="btn-container">
+            <button id="start-btn">Start</button>
+            <div id="restart-btn">Restart</div>
+            <div id="error">error:0</div>
+            <div class="timer"></div>
+        </div>
+        <div class="typing-container">
+            <textarea id="user-text" cols="60" rows="15"></textarea>
+        </div>
+    </div>
+</body>
+<script src="/index.js"></script>
+
+</html>
